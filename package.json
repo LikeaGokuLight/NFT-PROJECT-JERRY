@@ -1,0 +1,32 @@
+{
+  "name": "nft-project-jerry",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "NODE_ENV=production node server.js"
+  },
+  "keywords": [],
+  "author": "<VITALI PASSARO>",
+  "license": "ISC",
+  "dependencies": {
+    "@emotion/react": "^11.8.2",
+    "@emotion/styled": "^11.8.1",
+    "@mui/icons-material": "^5.5.1",
+    "@mui/material": "^5.5.3",
+    "@mui/styles": "^5.5.3",
+    "axios": "^0.26.1",
+    "clsx": "^1.1.1",
+    "framer-motion": "^6.2.8",
+    "next": "^12.1.4",
+    "node-sass": "^7.0.1",
+    "react": "^17.0.0",
+    "react-dom": "^17.0.0",
+    "react-icons": "^4.3.1",
+    "react-infinite-scroll-component": "^6.1.0",
+    "react-virtualized": "^9.22.3"
+  }
+}
+

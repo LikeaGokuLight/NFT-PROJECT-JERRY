@@ -1,0 +1,47 @@
+
+.card {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  text-align: center;
+  align-content: center;
+  font-weight: lighter;
+
+  .discord {
+    color: #8A39E1;
+  }
+
+  .twitter {
+    color: dodgerblue;
+  }
+
+  svg {
+    font-size: 1.5rem;
+    padding-left: .2rem;
+  }
+
+
+  &:hover {
+    font-weight: bold;
+  }
+}
+
+.eth {
+  display: inline-block;
+  color: white;
+  border-radius: .3rem;
+  padding: 0 .4rem;
+
+  background-color: black;
+
+  svg {
+    font-size: .8rem;
+  }
+
+  &_content {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    align-content: center;
+  }
+}
