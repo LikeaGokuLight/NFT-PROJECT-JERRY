@@ -264,7 +264,7 @@ const Dashboard = ({data, getDataSorted, title, children}) => {
     <ThemeProvider theme={Theme}>
       <Box sx={{display: 'flex', background: 'lightGrey'}}>
         <CssBaseline/>
-        <AppBar position="fixed" open={open} sx={{padding: '2rem'}}>
+        <AppBar position="fixed" open={open} sx={{padding: '1rem'}}>
           <Toolbar>
             <IconButton
               color="inherit"
@@ -278,16 +278,16 @@ const Dashboard = ({data, getDataSorted, title, children}) => {
             >
               <MenuIcon/>
             </IconButton>
-            <Typography variant="h4" noWrap component="div">
+            <div>
               <div>
-                <Typography variant="h4" noWrap component="div">
+                <Typography variant="h5" noWrap component="div">
                   {title.title?.length > 1 ? title.title : 'NFT #1 ' }
                 </Typography>
               </div>
-              <Typography variant="h5" noWrap component="div">
+              <Typography variant="h6" noWrap component="div">
                 {title.subtitle?.length > 1 ? title.subtitle : 'collections' }
               </Typography>
-            </Typography>
+            </div>
           </Toolbar>
         </AppBar>
         <Drawer variant="permanent" open={open}>
