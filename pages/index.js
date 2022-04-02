@@ -77,7 +77,7 @@ const Index = ({data}) => {
 };
 
 Index.getInitialProps = async () => {
-  const res = await axios.get(`https://api.nfolio.io/collection_metadata/?page=1&size=7`);
+  const res = await axios.get(`https://api.nfolio.io/collection_metadata/?page=1&size=10`);
   const {data} = res;
   return {data};
 };
