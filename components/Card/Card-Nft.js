@@ -16,14 +16,14 @@ const CardNft = ({data}) => {
     <motion.div
       whileHover={{y: -15}}
     >
-      <Card sx={{maxWidth: 250}}>
+      <Card sx={{maxWidth: 170}}>
         <CardActionArea>
-          <Link href={`/${data[0]}`}>
+          <Link href={`/${data.collection_slug}`}>
             <a>
               <CardMedia
                 component="img"
-                height="260"
-                image={data[1]?.image_url ? data[1].image_url : data[1].image_url_2}
+                height="200"
+                image={data[1]?.image_url ? data.image_url : data.image_url_2}
                 alt="green iguana"
               />
             </a>
@@ -36,7 +36,7 @@ const CardNft = ({data}) => {
               variant="h6"
               component="div"
             >
-              {data[0]}
+              {data.name}
             </Typography>
 
             <Grid container spacing={2}>
@@ -49,7 +49,7 @@ const CardNft = ({data}) => {
                 </div>
               </Grid>
               <Grid item xs={6}>
-                <Link href={ data[1].twitter_username.length > 1 ? `https://twitter.com/${data[1].twitter_username}` : '/' }>
+                <Link href={ data.twitter_username.length > 1 ? `https://twitter.com/${data.twitter_username}` : '/' }>
                   <a target={'_blank'}>
                     <div className={stylesCard.card}>
                       Twitter
@@ -59,7 +59,7 @@ const CardNft = ({data}) => {
                 </Link>
               </Grid>
               <Grid item xs={6}>
-                <Link href={data[1].external_link.length > 1 ? data[1].external_link : '/'}>
+                <Link href={data.external_link.length > 1 ? data.external_link : '/'}>
                   <a target={'_blank'}>
                     <div className={stylesCard.card}>
                       Website
@@ -69,7 +69,7 @@ const CardNft = ({data}) => {
                 </Link>
               </Grid>
               <Grid item xs={6}>
-                <Link href={data[1].discord_url.length > 1 ? data[1].discord_url : '/' }>
+                <Link href={data.discord_url.length > 1 ? data.discord_url : '/' }>
                   <a target={'_blank'}>
                     <div className={stylesCard.card}>
                         Discord

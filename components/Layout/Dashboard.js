@@ -172,10 +172,11 @@ const Dashboard = ({data, getDataSorted, title, children}) => {
   useEffect(async () => {
 
     if ( namesCollection.length <= 0 ) {
-      const res = await axios.get(`https://api.nfolio.io/collection_metadata`);
+      const res = await axios.get(`https://api.nfolio.io/collection_metadata/?page=1&size=10`);
       const {data} = res;
-      data.forEach(n => {
-        return namesCollection.push({ title: n[0] })
+      console.log(data)
+      data.items.map(n => {
+        return namesCollection.push({ title: n.collection_slug })
       })
 
     }
