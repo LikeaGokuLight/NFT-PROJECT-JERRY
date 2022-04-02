@@ -45,8 +45,8 @@ const Index = ({data}) => {
   return (
     <div>
       <Dashboard title={headerTitle}>
-        <Container maxWidth="hg" sx={{pb: '2rem'}}>
-          <Typography color={'primary'} variant="h4" noWrap component="div" sx={{pb: 2, fontWeight: 'bold'}}>
+        <Container maxWidth="hg">
+          <Typography color={'primary'} variant="h5" noWrap component="div" sx={{pb: 1, fontWeight: 'bold'}}>
             Explore the available collections
           </Typography>
 

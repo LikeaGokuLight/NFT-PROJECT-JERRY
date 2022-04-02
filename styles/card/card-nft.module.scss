@@ -5,7 +5,7 @@
   align-items: center;
   text-align: center;
   align-content: center;
-  font-weight: lighter;
+  font-size: 15px;
 
   .discord {
     color: #8A39E1;
@@ -33,6 +33,52 @@
   padding: 0 .4rem;
 
   background-color: black;
+
+  svg {
+    font-size: .8rem;
+  }
+
+  &_content {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    align-content: center;
+  }
+}
+
+.card_collection {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  align-content: center;
+  font-size: 15px;
+
+  .discord {
+    color: #8A39E1;
+  }
+
+  .twitter {
+    color: dodgerblue;
+  }
+
+  svg {
+    font-size: 1.5rem;
+    padding-left: .2rem;
+  }
+
+
+  &:hover {
+    font-weight: bold;
+  }
+}
+
+.buy {
+  display: inline-block;
+  color: white;
+  border-radius: .3rem;
+  padding: 0 .4rem;
+
+  background-color: dodgerblue;
 
   svg {
     font-size: .8rem;

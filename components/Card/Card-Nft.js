@@ -4,10 +4,13 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
-import {CardActionArea, Grid} from '@mui/material';
+import {CardActionArea, Chip, Grid} from '@mui/material';
 import {motion} from "framer-motion";
 import {FaDiscord, FaTwitter, FaConnectdevelop, FaEthereum} from "react-icons/fa";
 import stylesCard from "../../styles/card/card-nft.module.scss";
+import Stack from "@mui/material/Stack";
+import DiamondIcon from '@mui/icons-material/Diamond';
+
 
 const CardNft = ({data}) => {
 
@@ -18,28 +21,36 @@ const CardNft = ({data}) => {
     >
       <Card >
         <CardActionArea>
+          <Stack direction="row" spacing={1} sx={{ position:'absolute', p:1 }}>
+            <Chip icon={<DiamondIcon  />} label="FEATURED" color="primary" size="small" />
+          </Stack>
           <Link href={`/${data.collection_slug}`}>
             <a>
               <CardMedia
                 component="img"
-                height="200"
+                height="180"
                 image={data[1]?.image_url ? data.image_url : data.image_url_2}
                 alt="green iguana"
               />
             </a>
           </Link>
-          <CardContent>
+          <CardContent sx={{ maxHeight: '10rem' }}>
 
             <Typography
-              sx={{ width: '200px', clear: 'both', display: 'inline-block', overflow: 'hidden', whiteSpace: 'nowrap', textOverflow: 'ellipsis' }}
+              sx={{
+                width: '150px', clear: 'both', fontWeight: 'bold',
+                display: 'inline-block', overflow: 'hidden',
+                whiteSpace: 'nowrap', textOverflow: 'ellipsis',
+                textTransform: 'uppercase'
+              }}
               gutterBottom
-              variant="h6"
+              variant="p"
               component="div"
             >
               {data.name}
             </Typography>
 
-            <Grid container spacing={2}>
+            <Grid container spacing={.5}>
               <Grid item xs={6}>
                 <div className={stylesCard.eth}>
                   <div className={stylesCard.eth_content}>

@@ -100,7 +100,7 @@ const Collection = ({data}) => {
     <>
       <ThemeProvider theme={Theme}>
         <Dashboard data={state} getDataSorted={getDataSorted} title={headerTitle}>
-          <Typography variant="h5" noWrap component="div">
+          <Typography color={'primary'} variant="h5" noWrap component="div" sx={{pb: 1, ml:3, fontWeight: 'bold'}}>
             Collections #{query.collection.toUpperCase()} || items { state?.length > 1 ? state.length : '' }
           </Typography>
 
@@ -206,6 +206,7 @@ const Collection = ({data}) => {
 
           </Container>
         </Dashboard>
+
       </ThemeProvider>
     </>
   );
