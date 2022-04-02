@@ -16,7 +16,7 @@ const CardNft = ({data}) => {
     <motion.div
       whileHover={{y: -15}}
     >
-      <Card sx={{maxWidth: 170}}>
+      <Card >
         <CardActionArea>
           <Link href={`/${data.collection_slug}`}>
             <a>

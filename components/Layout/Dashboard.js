@@ -478,7 +478,7 @@ const Dashboard = ({data, getDataSorted, title, children}) => {
                       minWidth: 0,
                       mr: open ? 1 : 'auto',
                       justifyContent: 'center',
-                      color: '#8A39E1'
+                      color: '#ff2dbc'
                     }}
                   >
                     <LocationSearchingIcon/>
@@ -521,7 +521,7 @@ const Dashboard = ({data, getDataSorted, title, children}) => {
             ))}
           </List>
         </Drawer>
-        <Box component="main" sx={{flexGrow: 1, pt: 13, pl: 5}}>
+        <Box component="main" sx={{flexGrow: 1, pt: 13, pl: 2}}>
           <DrawerHeader/>
 
           {children}
