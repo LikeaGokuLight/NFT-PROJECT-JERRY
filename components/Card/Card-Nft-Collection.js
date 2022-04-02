@@ -106,7 +106,7 @@ const CardNftCollection = ({data, takeId}) => {
                   {data.name.split(' ').splice(1)}
                 </Typography>
               </Grid>
-              <Grid item xs={6}>
+              <Grid item xs={7}>
                 <Typography
                   sx={{
                     float:'left'
@@ -118,10 +118,10 @@ const CardNftCollection = ({data, takeId}) => {
                   Score {Math.floor(data.total_rarity)}
                 </Typography>
               </Grid>
-              <Grid item xs={6}>
+              <Grid item xs={5}>
                 <div className={stylesCard.buy}>
-                  <div className={stylesCard.eth_content}>
-                    BUY<FaEthereum/>25
+                  <div className={stylesCard.buy_content}>
+                    BUY<FaEthereum/>{ Math.round(data.avg)}
                   </div>
                 </div>
               </Grid>
