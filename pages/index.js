@@ -30,13 +30,13 @@ const Index = ({data}) => {
   const fetchDataOnScroll = async () => {
 
     try {
-      const res = await axios.get(`https://api.nfolio.io/collection_metadata/?page=${PAGE_NUMBER}&size=10`);
+      const res = await axios.get(`https://api.nfolio.io/collection_metadata/?page=${page}&size=10`);
       const {data} = res;
 
       if (data.items.length === 0) setHasMore(false);
 
       setState([...state, ...data.items]);
-      setPage(page + 1)
+      setPage(page + 1);
     } catch (err) {
       console.log(err.message)
     }
@@ -44,11 +44,6 @@ const Index = ({data}) => {
 
   return (
     <div>
-      <Link href={'/azuki'}>
-        <a>
-          <button>CLICK ME PLEASE TO SEE COLLECTION AZUKI</button>
-        </a>
-      </Link>
       <Dashboard title={headerTitle}>
         <Container maxWidth="hg" sx={{pb: '2rem'}}>
           <Typography color={'primary'} variant="h4" noWrap component="div" sx={{pb: 2, fontWeight: 'bold'}}>
