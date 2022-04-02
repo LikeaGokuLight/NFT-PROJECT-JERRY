@@ -103,7 +103,7 @@ const CardNftCollection = ({data, takeId}) => {
                   variant="p"
                   component="div"
                 >
-                  {data.name.split(' ').splice(1)}
+                  {data.name.split(' ').splice(-1)}
                 </Typography>
               </Grid>
               <Grid item xs={7}>
