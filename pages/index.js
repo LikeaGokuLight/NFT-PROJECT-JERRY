@@ -21,26 +21,26 @@ const Index = ({ data }) => {
           <button>CLICK ME PLEASE TO SEE COLLECTION AZUKI</button>
         </a>
       </Link>
-      {/*<Dashboard title={headerTitle}>*/}
-      {/*  <Container maxWidth="hg" sx={{pb:'2rem'}}>*/}
-      {/*    <Typography color={'primary'} variant="h4" noWrap component="div" sx={{pb:2, fontWeight:'bold'}}>*/}
-      {/*      Explore the available collections*/}
-      {/*    </Typography>*/}
-      {/*    <div className={styles.container}>*/}
-      {/*      {*/}
-      {/*        data.map((nft) => <CardNft data={nft} key={nft[1].token_address} />)*/}
-      {/*      }*/}
-      {/*    </div>*/}
-      {/*  </Container>*/}
-      {/*</Dashboard>*/}
+      <Dashboard title={headerTitle}>
+        <Container maxWidth="hg" sx={{pb:'2rem'}}>
+          <Typography color={'primary'} variant="h4" noWrap component="div" sx={{pb:2, fontWeight:'bold'}}>
+            Explore the available collections
+          </Typography>
+          <div className={styles.container}>
+            {
+              data.map((nft) => <CardNft data={nft} key={nft[1].token_address} />)
+            }
+          </div>
+        </Container>
+      </Dashboard>
     </div>
   );
 };
 
-// Index.getInitialProps = async () => {
-//   const res = await axios.get(` https://api.nfolio.io/collection_metadata`);
-//   const {data} = res;
-//   return {data};
-// };
+Index.getInitialProps = async () => {
+  const res = await axios.get(` https://api.nfolio.io/collection_metadata`);
+  const {data} = res;
+  return {data};
+};
 
 export default Index;
