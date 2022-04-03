@@ -40,7 +40,7 @@ import {
 } from "../../helper/sort";
 import axios from "axios";
 
-import Script from 'next/script'
+
 
 
 const drawerWidth = 280;
@@ -530,10 +530,7 @@ const Dashboard = ({data, getDataSorted, title, children}) => {
 
         </Box>
       </Box>
-      <Script
-        src="https://api.nfolio.io/collection_metadata/?page=1&size=10"
-        strategy="lazyOnload"
-      />
+
     </ThemeProvider>
   );
 };
