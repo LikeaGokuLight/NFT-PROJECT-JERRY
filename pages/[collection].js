@@ -17,6 +17,7 @@ import DiamondIcon from '@mui/icons-material/Diamond';
 import SailingIcon from '@mui/icons-material/Sailing';
 import PreviewIcon from '@mui/icons-material/Preview';
 import TableTraits from "../components/Table/TableTraits";
+import {router} from "next/client";
 
 const PAGE_NUMBER = 2;
 
@@ -38,6 +39,10 @@ const Collection = ({data}) => {
   const currentPath = router.asPath;
 
   useEffect(() => {
+    console.log(data.items)
+    if ( data.items.length < 1 ) {
+      return router.push('/')
+    }
     setState(data.items);
   }, [])
 
@@ -213,10 +218,14 @@ const Collection = ({data}) => {
 };
 
 Collection.getInitialProps = async ({query}) => {
-  const collection = query.collection;
-  const res = await axios.get(` https://api.nfolio.io/collections/${collection}/?page=1&size=30`);
-  const {data} = res;
-  return {data};
+  try {
+    const collection = query.collection;
+    const res = await axios.get(` https://api.nfolio.io/collections/${collection}/?page=1&size=30`);
+    const {data} = res;
+    return {data};
+  } catch (err) {
+    return router.push('/')
+  }
 }
 
 

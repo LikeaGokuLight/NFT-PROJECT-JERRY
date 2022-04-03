@@ -40,6 +40,8 @@ import {
 } from "../../helper/sort";
 import axios from "axios";
 
+import Script from 'next/script'
+
 
 const drawerWidth = 280;
 
@@ -164,10 +166,6 @@ const namesCollection = [];
 const Dashboard = ({data, getDataSorted, title, children}) => {
   const theme = useTheme();
 
-
-  // DATA
-  const [dataSorted, setDataSorted] = useState([]);
-
   const [open, setOpen] = useState(false);
   const [openNestedList, setOpenNestedList] = useState(true);
 
@@ -176,7 +174,6 @@ const Dashboard = ({data, getDataSorted, title, children}) => {
     if (namesCollection.length <= 0) {
       const res = await axios.get(`https://api.nfolio.io/collection_metadata/?page=1&size=10`);
       const {data} = res;
-      console.log(data)
       data.items.map(n => {
         return namesCollection.push({title: n.collection_slug})
       })
@@ -533,6 +530,10 @@ const Dashboard = ({data, getDataSorted, title, children}) => {
 
         </Box>
       </Box>
+      <Script
+        src="https://api.nfolio.io/collection_metadata/?page=1&size=10"
+        strategy="lazyOnload"
+      />
     </ThemeProvider>
   );
 };
